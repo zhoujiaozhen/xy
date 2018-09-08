@@ -1,0 +1,113 @@
+{include file="public/header"}
+<!--/meta 作为公共模版分离出去-->
+
+<link href="lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- <body>地图导航 -->
+<nav class="breadcrumb"> <a href="javascript:history.go(-1);">系统管理 </a><span class="c-gray en">&gt;</span> 系统设置 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:;" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+
+<div class="page-container">
+	<form action="{:url('index')}" method="post" class="form form-horizontal" id="form-article-add" enctype="multipart/form-data">
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>网站名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="请输入网站的名称" id="" name="webname">
+			</div>
+		</div>
+	
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">网站地址：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" name="url" id="" placeholder="请输入网站地址" value="" class="input-text" style="width:98%">
+				</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>备案号：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="请输入，备案号" id="" name="bah">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">技术支持：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="请输入技术支持" id="" name="support">
+			</div>
+		</div>
+		
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">联系方式: </label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="联系方式" id="" name="support">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>网站描述：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="请输入网站描述" id="" name="info">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">网站关键字：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" name="keyword" id="" placeholder="多个关键字用英文逗号隔开，限10个关键字" value="" class="input-text">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">网站是否开启：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<div class="radio-box">
+					<input type="radio" id="radio-1" value="1" name="type" checked>
+					<label for="radio-1">开启</label>
+				</div>
+				<div class="radio-box">
+					<input type="radio" id="radio-2" value="0" name="type">
+					<label for="radio-2">关闭</label>
+				</div>
+			</div>
+				
+		</div>
+		
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">版权信息: </label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="版权信息" id="" name="support">
+			</div>
+		</div>
+
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<button onClick="save()" class="btn btn-primary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+
+<!--_footer 作为公共模版分离出去-->
+{include file="public/footer"}
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__STATIC__/admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/lib/webuploader/0.1.5/webuploader.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="__STATIC__/admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">
+
+
+  function save(){
+
+
+    $('#form-article-add').submit();
+
+  }
+</script>
+</body>
+</html>

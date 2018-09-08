@@ -1,0 +1,160 @@
+﻿{include file="public/header" /} 
+<body>
+<header class="navbar-wrapper">
+	<div class="navbar navbar-fixed-top">
+		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">后台管理</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml"></a> 
+			<span class="logo navbar-slogan f-l mr-10 hidden-xs"></span> 
+			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
+		
+		<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
+			<ul class="cl">
+
+				<li id="Hui-skin" class="dropDown right dropDown_hover">
+					<a href="/" class="dropDown_A" title="网站首页" target="_black">
+						<i class="Hui-iconfont" style="font-size:18px">&#xe67f;</i>
+						网站首页
+					</a>
+				</li>
+				<li style='width:200px;text-align:center;line-height:44px;' id='time'>超级管理员</li>
+				<li>超级管理员</li>
+				<li class="dropDown dropDown_hover">
+					<a href="#" class="dropDown_A">{$Request.session.name} <i class="Hui-iconfont">&#xe6d5;</i></a>
+					<ul class="dropDown-menu menu radius box-shadow">
+						<li><a href="javascript:;" onclick="person('个人信息','{:url("person")}','2','400','250')">个人信息</a></li>
+						<li><a href="{:url('Login/logout')}">切换账户</a></li>
+						<li><a href="{:url('Login/logout')}">退出</a></li>
+					</ul>
+				</li>
+				
+				<li id="Hui-skin" class="dropDown right dropDown_hover"> <a href="javascript:;" class="dropDown_A" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
+					<ul class="dropDown-menu menu radius box-shadow">
+						<li><a href="javascript:;" data-val="default" title="默认（黑色）">默认（黑色）</a></li>
+						<li><a href="javascript:;" data-val="blue" title="蓝色">蓝色</a></li>
+						<li><a href="javascript:;" data-val="green" title="绿色">绿色</a></li>
+						<li><a href="javascript:;" data-val="red" title="红色">红色</a></li>
+						<li><a href="javascript:;" data-val="yellow" title="黄色">黄色</a></li>
+						<li><a href="javascript:;" data-val="orange" title="橙色">橙色</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</div>
+</header>
+{include file="public/left" /}
+<div class="dislpayArrow hidden-xs">
+	<a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a>
+</div>
+<section class="Hui-article-box">
+	<div id="Hui-tabNav" class="Hui-tabNav hidden-xs">
+		<div class="Hui-tabNav-wp">
+			<ul id="min_title_list" class="acrossTab cl">
+				<li class="active">
+					<span title="统计中心" data-href="welcome.html">统计中心</span>
+					<em></em></li>
+			</ul>
+		</div>
+		<div class="Hui-tabNav-more btn-group">
+			<a id="js-tabNav-prev" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d4;</i></a>
+			<a id="js-tabNav-next" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d7;</i></a>
+		</div>
+	</div>
+	<div id="iframe_box" class="Hui-article">
+		<div class="show_iframe">
+			<div style="display:none" class="loading"></div>
+			<iframe scrolling="yes" frameborder="0" src="{:url('count')}"></iframe>
+		</div>
+	</div>
+</section>
+
+<div class="contextMenu" id="Huiadminmenu">
+	<ul>
+		<li id="closethis">关闭当前 </li>
+		<li id="closeall">关闭全部 </li>
+	</ul>
+</div>
+{include file="public/footer" /}
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__STATIC__/admin/lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
+<script type="text/javascript">
+	$(function() {
+		/*$("#min_title_list li").contextMenu('Huiadminmenu', {
+			bindings: {
+				'closethis': function(t) {
+					console.log(t);
+					if(t.find("i")){
+						t.find("i").trigger("click");
+					}		
+				},
+				'closeall': function(t) {
+					alert('Trigger was '+t.id+'\nAction was Email');
+				},
+			}
+		});*/
+	});
+	/*个人信息*/
+	function myselfinfo() {
+		layer.open({
+			type: 1,
+			area: ['300px', '200px'],
+			fix: false, //不固定
+			maxmin: true,
+			shade: 0.4,
+			title: '查看信息',
+			content: '<div>管理员信息</div>'
+		});
+	}
+
+	/*资讯-添加*/
+	function person(title,url,id,w,h){
+		layer_show(title,url,w,h);
+	}
+	/*资讯-添加*/
+	function article_add(title, url) {
+		var index = layer.open({
+			type: 2,
+			title: title,
+			content: url
+		});
+		layer.full(index);
+	}
+	/*图片-添加*/
+	function picture_add(title, url) {
+		var index = layer.open({
+			type: 2,
+			title: title,
+			content: url
+		});
+		layer.full(index);
+	}
+	/*产品-添加*/
+	function product_add(title, url) {
+		var index = layer.open({
+			type: 2,
+			title: title,
+			content: url
+		});
+		layer.full(index);
+	}
+	/*用户-添加*/
+	function member_add(title, url, w, h) {
+		layer_show(title, url, w, h);
+	}
+
+	function currentTime(){ 
+	    var d=new Date(),str=''; 
+	    str+=d.getFullYear()+'年'; 
+	    str+=d.getMonth() + 1+'月'; 
+	    str+=d.getDate()+'日'; 
+	    str+=d.getHours()+'时'; 
+	    str+=d.getMinutes()+'分'; 
+	    str+= d.getSeconds()+'秒'; 
+	    return str; 
+	} 
+	setInterval(function(){$('#time').html(currentTime)},1000);
+</script>
+
+</body>
+
+</html>

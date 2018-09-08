@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta http-equiv="Pragma" content="no-cache"> 
+<meta http-equiv="Cache-Control" content="no-cache"> 
+<meta http-equiv="Expires" content="0"> 
+<title>后台登录</title> 
+<link href="__STATIC__/admin/login.css" type="text/css" rel="stylesheet"> 
+</head> 
+<body> 
+<style type="text/css">
+</style>
+
+<div class="login">
+    <div class="message">后台登录</div>
+    <div id="darkbannerwrap"></div>
+    
+    <form method="post" action="{:url('index')}">
+        <input name="name" placeholder="用户名" required="" type="text">
+        <hr class="hr15">
+        <input name="password" placeholder="密码" required="" type="password">
+        <hr class="hr15">
+        <div class="yzm">
+            <div class="left"><input name="yzm" placeholder="验证码" required="" type="text"></div>
+            <div class="right"><img src="{:captcha_src()}" alt="" onclick="this.src='{:captcha_src()}?'+Math.random()"></div>
+        </div>
+        
+        <hr class="hr15">
+        <input value="登录" style="width:100%;" type="submit">
+        <hr class="hr20">
+    </form>
+</div>
+
+<div class="copyright">© 技术支持 by <a href="http://www.mycodes.net/" target="_blank"></a></div>
+
+</body>
+</html>
